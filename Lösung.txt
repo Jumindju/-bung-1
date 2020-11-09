@@ -1,0 +1,26 @@
+b)
+Cp1252 = OK
+UTF-8 = OK
+Cp850 = OK
+
+c)
+Cp1252 = Fehler
+UTF-8 = Fehler
+Cp850 = Fehler
+
+d)
+Pro UTF 16:
+- Es werden so gut wie alle Zeichen unterstützt
+
+Con UTF 16:
+- Viele überflüssige 0, was zu viel Speicherverschwendung führt
+
+UTF 8:
+UTF 8 ist so wie UTF 16, nur das wenn das Zeichen < 7 Bit ist, das 8. Bit als Signalbit gesetzt wird und so das 2 Byte nicht mit 0 ausgeschrieben wird
+
+e)
+ü=Ã¼
+A=A
+ß=ÃŸ
+[=[
+€=€

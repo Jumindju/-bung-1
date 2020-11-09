@@ -24,7 +24,7 @@ public class Client {
             Vector<MessageParameter> sendParameter = new Vector<>();
             sendParameter.add(new MessageParameter("m",msgToSend));
             sendParameter.add(new MessageParameter("l", toLowerCase));
-            String msg = MessageHelper.Serialize(sendParameter);
+            String msg = MessageHelper.serialize(sendParameter);
 
             System.out.println("Send: " + msg);
             toServer.write(msg);
@@ -34,7 +34,7 @@ public class Client {
             if(result.equals("Server shutdown")){
                 System.out.println("Server was stopped");
             } else{
-                Vector<MessageParameter> messageParts = MessageHelper.Deserialize(result);
+                Vector<MessageParameter> messageParts = MessageHelper.deserialize(result);
                 for(MessageParameter messagePart : messageParts){
                     switch (messagePart.getParameter()){
                         case "m":

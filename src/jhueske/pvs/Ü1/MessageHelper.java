@@ -3,7 +3,7 @@ package jhueske.pvs.Ü1;
 import java.util.Vector;
 
 public class MessageHelper {
-    public static String Serialize(Vector<MessageParameter> messageParts){
+    public static String serialize(Vector<MessageParameter> messageParts){
         String message = "";
         for (MessageParameter messagePart : messageParts) {
             message += messagePart.getMessagePart() + ";";
@@ -12,7 +12,7 @@ public class MessageHelper {
         return message.substring(0,message.length()-1) + "\n";
     }
 
-    public static Vector<MessageParameter> Deserialize(String message){
+    public static Vector<MessageParameter> deserialize(String message){
         if (message==null)
             throw new IllegalArgumentException();
 

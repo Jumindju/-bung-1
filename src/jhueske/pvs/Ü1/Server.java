@@ -43,7 +43,7 @@ public class Server {
 
                     String message = "";
                     boolean toLower = false;
-                    Vector<MessageParameter> requestParameters = MessageHelper.Deserialize(stringToConvert);
+                    Vector<MessageParameter> requestParameters = MessageHelper.deserialize(stringToConvert);
                     for (MessageParameter messageParameter : requestParameters) {
                         switch (messageParameter.getParameter()) {
                             case "m":
@@ -63,7 +63,7 @@ public class Server {
                     responseParameters.add(new MessageParameter("p", message.length() * 1.5));
                     responseParameters.add(new MessageParameter("m", toLower ? message.toLowerCase() : message.toUpperCase()));
 
-                    toClient.write(MessageHelper.Serialize(responseParameters) + '\n');
+                    toClient.write(MessageHelper.serialize(responseParameters) + '\n');
                 }
 
                 toClient.close();
